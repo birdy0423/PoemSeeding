@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>線上客製訂單｜詩秧花室</title>
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body data-page="order-form">
+    <header>
+      <div class="container nav">
+        <a class="nav__brand" href="index.html">
+          <img src="assets/logo.png" alt="詩秧花室 Logo" />
+          <span>Poem Seeding Florist</span>
+        </a>
+        <nav class="nav__links">
+          <a href="orders.html">我的訂單</a>
+          <a href="index.html#faq">常見問題</a>
+        </nav>
+        <div data-auth-badge></div>
+      </div>
+    </header>
+
+    <main class="section">
+      <div class="container" style="max-width: 880px">
+        <h1 class="section__title">填寫客製需求</h1>
+        <p class="section__subtitle">
+          請詳細描述您期望的色系、目的與故事，我們會在 24 小時內回覆確認。
+          <br />
+          最早取貨/配送日：<strong data-earliest-date></strong>
+        </p>
+
+        <form>
+          <h2 class="form__section-title">花禮資訊</h2>
+          <div class="form-grid">
+            <label>
+              訂單稱呼/主題
+              <input type="text" name="custom_title" placeholder="例：秋日暖陽桌花" required />
+            </label>
+            <label>
+              預算下限 (TWD)
+              <input type="number" name="budget_min" placeholder="例：2500" min="1500" required />
+            </label>
+            <label>
+              預算上限 (TWD)
+              <input type="number" name="budget_max" placeholder="例：3000" min="1500" required />
+            </label>
+            <label>
+              取貨 / 配送日期
+              <input type="date" name="scheduled_date" required />
+            </label>
+          </div>
+
+          <label>
+            想要呈現的感覺 / 靈感描述
+            <textarea
+              name="product_description"
+              placeholder="描述用途、空間、想傳達的心意，或貼上參考連結"
+              required
+            ></textarea>
+          </label>
+
+          <div class="form-grid">
+            <label>
+              色系偏好
+              <input type="text" name="preferred_palette" placeholder="例：奶油白、暖杏、焦糖" />
+            </label>
+            <label>
+              喜歡的花材
+              <input type="text" name="flower_preferences" placeholder="例：玫瑰、兔尾草" />
+            </label>
+            <label>
+              希望避免的花材
+              <input type="text" name="avoid_flowers" placeholder="如不想要百合可在此註記" />
+            </label>
+          </div>
+
+          <label>
+            用途
+            <input type="text" name="purpose" placeholder="例：訂婚儀式、店面佈置" />
+          </label>
+
+          <label>
+            祝福卡片內容（選填）
+            <textarea name="card_message" placeholder="想說的話或詩句，我們會為您手寫。"></textarea>
+          </label>
+
+          <h2 class="form__section-title">配送與聯絡資訊</h2>
+
+          <label>
+            配送方式
+            <select name="delivery_method" required>
+              <option value="pickup_kaohsiung">仁武工作室自取</option>
+              <option value="pickup_tainan">台南工作室自取</option>
+              <option value="lalamove">Lalamove 配送（高雄/台南都會區）</option>
+              <option value="blackcat">黑貓低溫宅配（全台）</option>
+            </select>
+          </label>
+          <div class="badge" data-delivery-fee></div>
+
+          <div class="form-grid" data-pickup-section>
+            <label>
+              自取時段
+              <select name="pickup_slot">
+                <option value="上午 11:00-13:00">上午 11:00-13:00</option>
+                <option value="下午 15:00-17:00">下午 15:00-17:00</option>
+                <option value="晚上 18:00-20:00">晚上 18:00-20:00</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="form-grid" data-delivery-section style="display: none">
+            <label>
+              配送地址
+              <input type="text" name="delivery_address" placeholder="請詳填地址與樓層" />
+            </label>
+            <label>
+              希望送達時段
+              <input type="text" name="preferred_delivery_window" placeholder="例：14:00-18:00" />
+            </label>
+          </div>
+
+          <div class="form-grid">
+            <label>
+              收花人姓名
+              <input type="text" name="receiver_name" required />
+            </label>
+            <label>
+              收花人電話
+              <input type="tel" name="receiver_phone" required />
+            </label>
+          </div>
+
+          <button type="submit" class="btn">送出訂製需求</button>
+        </form>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">詩秧花室 Poem Seeding Florist</div>
+    </footer>
+
+    <script src="scripts/app.js"></script>
+  </body>
+</html>

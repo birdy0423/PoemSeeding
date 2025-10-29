@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>註冊詩秧花室會員</title>
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body data-page="register">
+    <header>
+      <div class="container nav">
+        <a class="nav__brand" href="index.html">
+          <img src="assets/logo.png" alt="詩秧花室 Logo" />
+          <span>Poem Seeding Florist</span>
+        </a>
+        <div class="nav__links">
+          <a href="login.html">已經有帳號？登入</a>
+          <a href="login.html?redirect=order-new.html" data-order-link>立即下單</a>
+        </div>
+        <div data-auth-badge></div>
+      </div>
+    </header>
+
+    <main class="section">
+      <div class="container" style="max-width: 560px">
+        <h1 class="section__title">建立會員帳號</h1>
+        <p class="section__subtitle">
+          請留下您的聯絡資訊，下單後我們會以電話或 Email 再次確認內容。
+        </p>
+        <form>
+          <div class="form-grid">
+            <label>
+              姓名
+              <input type="text" name="name" placeholder="例：林小姐" required />
+            </label>
+            <label>
+              連絡電話
+              <input type="tel" name="phone" placeholder="09xx-xxx-xxx" required />
+            </label>
+          </div>
+          <label>
+            Email
+            <input type="email" name="email" placeholder="you@example.com" required />
+          </label>
+          <label>
+            密碼
+            <input type="password" name="password" minlength="6" required />
+          </label>
+          <button type="submit" class="btn">建立帳號並開始下單</button>
+          <p style="text-align: center">
+            已經有帳號了？<a href="login.html">直接登入</a>
+          </p>
+        </form>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">詩秧花室 Poem Seeding Florist</div>
+    </footer>
+
+    <script src="scripts/app.js"></script>
+  </body>
+</html>
