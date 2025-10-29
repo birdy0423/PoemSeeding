@@ -1,7 +1,0 @@
-﻿applyFilters(false);
-      renderDetail(order);
-      alert('訂單資料已更新，已通知會員。');
-    });
-  };
-
-  const applyFilters 
