@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>業主後台｜詩秧花室</title>
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body data-page="admin-dashboard">
+    <header>
+      <div class="container nav">
+        <a class="nav__brand" href="index.html">
+          <img src="assets/logo.png" alt="詩秧花室 Logo" />
+          <span>Poem Seeding Florist</span>
+        </a>
+        <nav class="nav__links">
+          <a href="order-new.html">模擬會員下單</a>
+        </nav>
+        <div data-auth-badge></div>
+      </div>
+    </header>
+
+    <main class="section">
+      <div class="container">
+        <h1 class="section__title">業主訂單總覽</h1>
+        <p class="section__subtitle">
+          管理每日訂單、更新狀態與下載報表。右側可即時查看訂單詳情。
+        </p>
+
+        <div class="summary-grid" data-admin-summary>
+          <!-- Summary cards inserted via JS -->
+        </div>
+
+        <form class="toolbar toolbar--filters" data-admin-filters>
+          <div class="toolbar__filters">
+            <label class="field">
+              <span>起日</span>
+              <input type="date" name="from" />
+            </label>
+            <label class="field">
+              <span>迄日</span>
+              <input type="date" name="to" />
+            </label>
+            <label class="field">
+              <span>狀態</span>
+              <select name="status">
+                <option value="">全部狀態</option>
+              </select>
+            </label>
+            <label class="field field--grow">
+              <span>關鍵字</span>
+              <input
+                type="search"
+                name="keyword"
+                placeholder="輸入姓名、電話或訂單編號"
+              />
+            </label>
+          </div>
+          <div class="toolbar__actions">
+            <button type="button" class="btn btn--light" data-demo-seed>匯入測試資料</button>
+            <button type="submit" class="btn btn--light">套用篩選</button>
+            <button type="button" class="btn btn--light" data-reset>清除</button>
+            <button type="button" class="btn" data-export>匯出 CSV</button>
+            <span class="toolbar__count" data-filter-summary></span>
+          </div>
+        </form>
+
+        <div class="admin-layout">
+          <div class="admin-layout__table">
+            <div class="table-wrapper">
+              <table class="table" data-admin-table-wrapper>
+                <thead>
+                  <tr>
+                    <th>訂單</th>
+                    <th>預約日期</th>
+                    <th>配送方式</th>
+                    <th>預算</th>
+                    <th>收花資訊</th>
+                    <th>狀態</th>
+                    <th>操作</th>
+                  </tr>
+                </thead>
+                <tbody data-admin-table></tbody>
+              </table>
+            </div>
+          </div>
+
+          <aside class="admin-detail" data-admin-detail hidden>
+            <div class="admin-detail__header">
+              <h2 data-detail-title>訂單詳情</h2>
+              <button type="button" class="admin-detail__close" data-detail-close>
+                &times;
+              </button>
+            </div>
+            <div class="admin-detail__content" data-admin-detail-body>
+              <div class="empty-state">請從左側列表選擇要查看的訂單。</div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">詩秧花室 Poem Seeding Florist</div>
+    </footer>
+
+    <script src="scripts/app.js"></script>
+  </body>
+</html>
